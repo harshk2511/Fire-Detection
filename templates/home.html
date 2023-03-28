@@ -90,7 +90,13 @@ form input[type="file"] {
     
     </form>
     <h2 style="margin-top: 20px; text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);">{{ final_pred }}</h2>
-    <img src="{{ img_path }}" width="300">
+    <!-- <img src="{{ img_path }}" width="300"> -->
+    {% if file_type == 'video' %}
+    <video src="{{ file_path }}" width="400" height="300" controls></video>
+    {% elif file_type == 'image' %}
+    <img src="{{ file_path }}" width="400" height="300">
+    {% endif %}
+
   </div>
 </div>
   <!-- </div> -->
@@ -100,5 +106,3 @@ form input[type="file"] {
 
 </body>
 </html>
-
-
